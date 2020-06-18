@@ -92,38 +92,37 @@ void decrypt(){
             for (int i = 0; i < strlen(s); i++)
             {
                 if(isalpha(s[i])){
-                if((s[i] - j) < 'a' && s[i] >= 'a'){
-                int new;
-                new = 'a' -( s[i] - j)  -1 ;
-                printf("%c" , 'z' - new);
-                }
-                else if ((s[i] - j) < 'A' ) 
-                {
-                int new;
-                new = 'A' - (s[i] - j) - 1 ;
-                printf("%c" , 'Z' - new);
-                }
-                else
-                printf("%c",s[i] - j);
-                }
-                else
-                printf("%c",s[i]); 
+                    if((s[i] - j) < 'a' && s[i] >= 'a'){
+                        int new;
+                        new = 'a' -( s[i] - j)  -1 ;
+                        printf("%c" , 'z' - new);
+                    }
+                    else if ((s[i] - j) < 'A' ) 
+                    {
+                        int new;
+                        new = 'A' - (s[i] - j) - 1 ;
+                        printf("%c" , 'Z' - new);
+                    }
+                    else
+                        printf("%c",s[i] - j);
+                    }
+                    else
+                        printf("%c",s[i]); 
             }
         }
-        
     }
  printf("\n");   
  sleep(1);
 }
 int main(int argc, char const *argv[])
 {
-            int choice ;
+    int choice ;
     do{
             printf("------------------------- Welcome : ------------------------- \n");
             printf("Entre your choice : \n");
-            printf("  "); printf("> 1.Encrypt\n");
-            printf("  "); printf("> 2.Decrypt\n");
-            printf("  "); printf("> 3.Exit\n");
+            printf("  > 1.Encrypt\n");
+            printf("  > 2.Decrypt\n");
+            printf("  > 3.Exit\n");
             // Get user choice :
             scanf("%d",&choice);
 
@@ -131,17 +130,13 @@ int main(int argc, char const *argv[])
             switch (choice)
             {
                 case 1:
-
-                encypt();
+                    encypt();
                     break;
-                
                 case 2:
-
-                decrypt();
+                    decrypt();
                     break;
-                
             }
-    }while(  isalpha(choice) == 0 && choice != 3);
+    }while(isalpha(choice) == 0 && choice != 3);
     printf("\n Thanks for using this program ... \n");
     sleep(1);
     return 0;
